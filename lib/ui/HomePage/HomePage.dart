@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login_ui/ui/LoginPage/LoginPage.dart';
 
 class HomaPage extends StatefulWidget {
   @override
@@ -33,7 +34,7 @@ class _HomaPageState extends State<HomaPage> {
                   child: new RaisedButton(
                     color: Colors.blueAccent,
                     child: Text("Login", style: TextStyle(color: Colors.white),),
-                    onPressed: ()=>loginBtnClicked(),
+                    onPressed: ()=>loginBtnClicked(context),
                   ),
                 ),
               ),
@@ -45,6 +46,9 @@ class _HomaPageState extends State<HomaPage> {
   }
 }
 
-loginBtnClicked(){
-  print("Hasi");
+loginBtnClicked(context){
+  Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context) => LoginPage()),
+  );
 }
